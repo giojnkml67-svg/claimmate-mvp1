@@ -4,7 +4,7 @@ from openai import OpenAI
 import pandas as pd
 
 # --- Configuration ---
-API_KEY = os.environ.get("")
+API_KEY = os.environ.get("OPENAI_API_KEY")
 client = OpenAI(api_key=API_KEY)
 
 # --- Symptom Mapping Function ---
@@ -69,3 +69,4 @@ if st.button("Find Potential Conditions"):
     df = map_symptoms(symptoms)
     st.write("### Results")
     st.dataframe(df)
+
